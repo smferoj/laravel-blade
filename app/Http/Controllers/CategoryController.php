@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Storage;
 class CategoryController extends Controller
 {
     public function index(){
-        return view('Admin/Categories');
+
+        $categories = Category::all();
+        return view('Admin/Categories', compact('categories'));
     }
 
     public function createCategory(){
